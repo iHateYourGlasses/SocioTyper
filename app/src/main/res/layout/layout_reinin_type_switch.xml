@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--<TextView
+        android:id="@+id/tvTypeOne"
+        android:layout_width="wrap_content"
+        android:layout_height="50sp"
+        android:text="Name"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:textSize="20sp"
+        android:gravity="center_vertical" />
+
+    <TextView
+        android:id="@+id/tvTypeTwo"
+        android:layout_width="wrap_content"
+        android:layout_height="50sp"
+        android:text="HomeTown"
+        android:textSize="20sp"
+        android:layout_alignParentTop="true"
+        android:gravity="center_vertical" />-->
+
+    <Button
+        android:text="Button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight=".40"
+        android:id="@+id/bTypeOne" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight=".20"
+        android:gravity="center_vertical|center_horizontal"
+        android:paddingTop="10dp">
+
+        <android.support.v7.widget.AppCompatCheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/cbIsTypeActive"
+            android:buttonTint="@color/colorReininButtonActive"
+            android:gravity="center_vertical|center_horizontal"
+            android:scaleX="1.50"
+            android:scaleY="1.50" />
+
+    </LinearLayout>
+
+    <Button
+        android:text="Button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight=".40"
+        android:id="@+id/bTypeTwo" />
+
+</LinearLayout>
