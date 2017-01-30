@@ -58,11 +58,36 @@ public class MainActivity extends AppCompatActivity {
 
         Cursor res = db.getReininData();
 
-        ReininTypeModel StatDin = new ReininTypeModel("Статика", "Динамика", true, true);
+        ArrayList<ArrayList> reininArray = new ArrayList();
+
+        while (res.moveToNext()){
+            int reininPair = res.getInt(2);
+            int curArraySize = reininArray.size();
+            String reininName = res.getString(1);
+
+            ArrayList<String> curArray = new ArrayList<String>();
+            curArray.clear();
+            if(reininPair != curArraySize) {
+                curArray = reininArray.get(reininPair);
+            }else{
+                reininArray.add(reininPair, curArray );
+            }
+            curArray.add(curArray.size(), reininName);
+
+            reininArray.set(reininPair, curArray );
+
+        }
+
+        for (ArrayList<String> curData: reininArray) {
+            ReininTypeModel curIterationData = new ReininTypeModel(curData.get(0), curData.get(1), false, false);
+            adapter.add(curIterationData);
+
+        }
+       /* ReininTypeModel StatDin = new ReininTypeModel("Статика", "Динамика", true, true);
         adapter.add(StatDin);
         ReininTypeModel PrRes = new ReininTypeModel("Процесс", "Результат",true, false);
         adapter.add(PrRes);
         ReininTypeModel KvestDekl = new ReininTypeModel("Квестимность", "Деклатимность", false, true);
-        adapter.add(KvestDekl);
+        adapter.add(KvestDekl);*/
     }
 }
