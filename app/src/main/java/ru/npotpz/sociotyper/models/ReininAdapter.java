@@ -63,7 +63,6 @@ public class ReininAdapter extends ArrayAdapter<ReininTypeModel> {
             @Override
             public void onClick(View view) {
                 int position = (Integer) view.getTag();
-                // Access the row position here to get the correct data item
                 ReininTypeModel curSwitchData = getItem(position);
                 curSwitchData.isFirstTypeActive = !curSwitchData.isFirstTypeActive;
                 curSwitchData.isSwitchActive = true;
@@ -79,7 +78,6 @@ public class ReininAdapter extends ArrayAdapter<ReininTypeModel> {
             @Override
             public void onClick(View view) {
                 int position = (Integer) view.getTag();
-                // Access the row position here to get the correct data item
                 ReininTypeModel curSwitchData = getItem(position);
                 curSwitchData.isFirstTypeActive = !curSwitchData.isFirstTypeActive;
                 curSwitchData.isSwitchActive = true;
@@ -95,7 +93,6 @@ public class ReininAdapter extends ArrayAdapter<ReininTypeModel> {
             @Override
             public void onClick(View view) {
                 int position = (Integer) view.getTag();
-                // Access the row position here to get the correct data item
                 ReininTypeModel curSwitchData = getItem(position);
                 curSwitchData.isSwitchActive = !curSwitchData.isSwitchActive;
                 isSwitchActiveView.setChecked(curSwitchData.isSwitchActive);

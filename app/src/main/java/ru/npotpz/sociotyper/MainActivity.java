@@ -1,5 +1,6 @@
 package ru.npotpz.sociotyper;
 
+import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -14,13 +15,14 @@ import ru.npotpz.sociotyper.models.ReininTypeModel;
 
 public class MainActivity extends AppCompatActivity {
 
+
      @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-       fillReininList();
+        fillReininList();
     }
 
     @Override
@@ -46,12 +48,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void fillReininList(){
+        DBHelper db = new DBHelper(this);
 
         ArrayList<ReininTypeModel> arrayOfTypeSwitches = new ArrayList<ReininTypeModel>();
         ReininAdapter adapter = new ReininAdapter(MainActivity.this, arrayOfTypeSwitches);
 
         ListView switchesList = (ListView) findViewById(R.id.lvSwitches);
         switchesList.setAdapter(adapter);
+
+        Cursor res = db.getReininData();
 
         ReininTypeModel StatDin = new ReininTypeModel("Статика", "Динамика", true, true);
         adapter.add(StatDin);
