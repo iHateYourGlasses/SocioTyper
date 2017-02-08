@@ -96,6 +96,8 @@ public class ReininAdapter extends ArrayAdapter<ReininTypeModel> {
                 ReininTypeModel curSwitchData = getItem(position);
                 curSwitchData.isSwitchActive = !curSwitchData.isSwitchActive;
                 isSwitchActiveView.setChecked(curSwitchData.isSwitchActive);
+                typeOneView.setBackgroundColor(ContextCompat.getColor(view.getContext(), R.color.colorReininButtonPassive));
+                typeTwoView.setBackgroundColor(ContextCompat.getColor(view.getContext(), R.color.colorReininButtonPassive));
 
             }
         });
