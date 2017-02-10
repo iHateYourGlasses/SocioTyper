@@ -16,7 +16,6 @@ import com.hannesdorfmann.mosby.mvp.MvpActivity;
 
 import java.util.ArrayList;
 
-import ru.npotpz.sociotyper.DBHelper;
 import ru.npotpz.sociotyper.R;
 import ru.npotpz.sociotyper.interfaces.TestPresenter;
 import ru.npotpz.sociotyper.interfaces.TestView;

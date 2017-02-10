@@ -1,4 +1,4 @@
-package ru.npotpz.sociotyper;
+package ru.npotpz.sociotyper.views;
 
 import android.content.Context;
 import android.database.Cursor;
